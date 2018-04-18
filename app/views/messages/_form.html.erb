@@ -1,11 +1,10 @@
-<%= simple_form_for(@message) do |f| %>
-  <%= f.error_notification %>
+<%= simple_form_for Message.new, remote: true do |f| %>
 
-  <div class="inputs">
-    <%= f.input :body %>
-  </div>
-
-  <div class="actions">
-    <%= f.button :submit %>
-  </div>
+<div class="input-group" style="padding:0">
+	<%= f.input :body, as: :string, placeholder: "Enter message...", class:'form-control', label: false, wrapper: false %>
+	<div class="input-group-append">
+		<%= f.submit "Send Message", class: 'btn btn-outline-secondary' %>
+	</div>
+</div>
 <% end %>
+
