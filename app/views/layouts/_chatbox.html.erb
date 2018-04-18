@@ -1,6 +1,7 @@
 <div class="col-md-12 col-lg-12" id="messages" style="height: 250px; overflow-y: scroll;">
 	<% Message.all.last(50).each do |message| %>
-		<%= render 'messages/message', message: message %>
+	<%= render 'messages/message', message: message, currentUser: current_user.id, creator: message.user.id %>
+	
 	<% end %>
 </div>
 <%= render 'messages/form' %>

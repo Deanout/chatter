@@ -17,3 +17,4 @@
 //= require tether
 //= require activestorage
 //= require_tree .
+//= stub pages

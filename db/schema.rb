@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_04_17_234329) do
+ActiveRecord::Schema.define(version: 2018_04_18_053926) do
 
   create_table "messages", force: :cascade do |t|
     t.integer "user_id"
@@ -33,6 +33,8 @@ ActiveRecord::Schema.define(version: 2018_04_17_234329) do
     t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "last_sign_out_at"
+    t.boolean "online", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

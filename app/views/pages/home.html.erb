@@ -1,21 +1,20 @@
-<div class="jumbotron" style="margin-top:1em">
-	<h1><% if current_user %>
-	Hello <%= current_user.email.split("@")[0].capitalize %>, <%= link_to "Sign out?", destroy_user_session_path, method: :delete %>
-	<% else %>
-	<%= link_to "Sign in", new_user_session_path %>
-	<%= link_to "Sign up", new_user_registration_path %>
-	<% end %></h1>
-	<hr>
-	<div class="well">
-		<%= render 'layouts/chatbox' %>
+<div class="row">
+	<div class="col-4">
+		<%= render 'layouts/sidepanel' %>
 	</div>
+	<div class="col-8">
+		<div class="jumbotron">
+			<p style="text-align:center">
+				<%= render 'layouts/session_links' %>
+			</p>
+			<hr>
+			<% if current_user %>
+			<div class="well">
+				<%= render 'layouts/chatbox' %>
+			</div>
+			<% end %>
+		</div>
+	</div>
+	
 </div>
-<script>
-$(document).ready(function() {
-	var messages = $('#messages');
-	function init() {
-		messages.scrollTop($('#messages')[0].scrollHeight);
-	}
-	window.setTimeout(init, 50);
-});
-</script>
+<script src="assets/pages.js"></script>

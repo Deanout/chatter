@@ -1,0 +1,20 @@
+<div class="col-12" style="height:250px;">
+	<div class="jumbotron" style="padding:0.2em;overflow-y:scroll;">
+		<h6>Users</h6>
+		<hr>
+		<% User.all.each do |user| %>
+		<%= user.email.split('@')[0].capitalize %>: <%= user.online? ? "Online" : "Offline" %>
+		<br>
+		<% end %>
+	</div>
+</div>
+<div class="col-12" style="height:250px;">
+	<div class="jumbotron" style="padding:0.2em;overflow-y:scroll;">
+		<h6>Rooms</h6>
+		<hr>
+		<% User.all.each do |user| %>
+		<%= user.email.split('@')[0].capitalize %>: <%= user.online? ? "Online" : "Offline" %>
+		<br>
+		<% end %>
+	</div>
+</div>

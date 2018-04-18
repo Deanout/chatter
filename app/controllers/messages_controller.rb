@@ -7,4 +7,11 @@ class MessagesController < ApplicationController
     message.save
 
   end
+
+  def destroy
+  	Message.find(params[:id]).destroy
+  	respond_to do |format|
+	  format.js { render "destroy", :locals => {:id => params[:id]} }
+	end
+  end
 end
