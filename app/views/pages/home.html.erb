@@ -1,12 +1,14 @@
 <div class="jumbotron" style="margin-top:1em">
-	<h1>Home</h1>
-	<hr>
-	<div class="well">
-		<% if current_user %>
+	<h1><% if current_user %>
 			Hello <%= current_user.email.split("@")[0].capitalize %>, <%= link_to "Sign out?", destroy_user_session_path, method: :delete %>
 		<% else %>
 			<%= link_to "Sign in", new_user_session_path %>
 			<%= link_to "Sign up", new_user_registration_path %>
-		<% end %>
+		<% end %></h1>
+	<hr>
+	<div class="well">
+
 	</div>
+
+	<%= render 'layouts/chatbox' %>
 </div>

@@ -1,0 +1,15 @@
+<div class="col-md-6" style="height: 250px; overflow-y: scroll;">
+	<% Message.all.last(50).each do |message| %>
+	<div class="well">
+		[<%= message.created_at.strftime("%l:%M %p") %>] <%= message.user.email %>: <%= message.body %>
+	</div>
+	<% end %>
+</div>
+<%= simple_form_for Message.new, html: {class: 'form-horizontal' }, remote: true do |f| %>
+<div class="input-group col-md-6" style="padding:0">
+	<%= f.input :body, as: :string, placeholder: "Enter message...", class:'form-control', label: false, wrapper: false %>
+	<div class="input-group-append">
+		<%= f.submit "Send Message", class: 'btn btn-outline-secondary' %>
+	</div>
+</div>
+<% end %>
