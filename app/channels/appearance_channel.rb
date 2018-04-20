@@ -1,6 +1,6 @@
 class AppearanceChannel < ApplicationCable::Channel
   def subscribed
-    stream_from "appearance"
+    stream_for "appearance"
     
     if current_user
     	ActionCable.server.broadcast "appearance", {
