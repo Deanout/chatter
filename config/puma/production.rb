@@ -1,5 +1,5 @@
 def home_dir
-    '/home/ec2-user/chatter'
+    '/home/chatter'
 end
 
 def path(p)
@@ -15,5 +15,5 @@ pidfile path('tmp/pids/puma.pid')
 state_path path('tmp/pids/puma.state')
 stdout_redirect path('log/puma.log'), path('log/error.puma.log'), true
 threads 0, 1
-bind "unix:///home/ec2-user/chatter/tmp/pids/puma.sock"
+bind "unix:///home/chatter/tmp/pids/puma.sock"
 activate_control_app
