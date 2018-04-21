@@ -1,0 +1,2 @@
+kill -quit $(ps aux | pgrep -f puma | awk '{print $1}') && RAILS_ENV=production rails assets:precompile && puma -C config/puma/production.rb -d
+

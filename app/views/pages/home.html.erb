@@ -10,11 +10,11 @@
 			<hr>
 			<% if current_user %>
 			<div class="well">
-				<script src="assets/pages.js"></script>
+				<%= javascript_include_tag asset_path 'pages.js' %>
 				<%= render 'layouts/chatbox' %>
 			</div>
 			<% end %>
 		</div>
 	</div>
-	
+
 </div>
