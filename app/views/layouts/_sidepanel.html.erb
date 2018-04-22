@@ -1,17 +1,20 @@
-<div class="col-12" style="height:250px;">
-	<div class="jumbotron" style="padding:0.2em;overflow-y:scroll;">
+<div class="col-12" style="height:250px;padding:0">
+	<div class="jumbotron" style="overflow-y:scroll;height:100%">
 		<h6>Users</h6>
 		<hr>
 		<ul id="online_users">
 		</ul>
 		<p id="online-count">
-			<%= pluralize(User.where(online: true).count, "Users") %> online.
+			<%= pluralize(User.where(online: true).count, "User") %> online.
 		</p>
 	</div>
 </div>
-<div class="col-12" style="height:250px;">
-	<div class="jumbotron" style="padding:0.2em;overflow-y:scroll;">
+<div class="col-12" style="height:250px;padding:0">
+	<div class="jumbotron" style="overflow-y:scroll;height:100%">
 		<h6>Rooms</h6>
 		<hr>
+		<ul id="rooms">
+			<%= ChatChannel.channel_name.capitalize %>
+		</ul>
 	</div>
 </div>

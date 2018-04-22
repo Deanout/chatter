@@ -15,6 +15,7 @@
 //= require popper
 //= require bootstrap-sprockets
 //= require tether
+//= require turbolinks
 //= require activestorage
 //= require_tree .
 //= stub pages
